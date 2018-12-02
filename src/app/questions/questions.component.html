@@ -1,0 +1,52 @@
+<div class="row">
+
+<p>{{userName}} your time is {{time}}</p>
+
+</div>
+
+<form *ngIf="!finished" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+  <label for="questionOne">
+    Question 1 :  {{questions[0].description}}
+  </label>
+    <input type="number" id="questionOne" class="form-control" formControlName="questionOne">
+  </div>
+
+  <div class="form-group">
+  <label for="questionTwo">
+    Question 2 :  {{questions[1].description}}
+  </label>
+    <input type="number" id="questionTwo"  class="form-control" formControlName="questionTwo">
+  </div>
+
+  <div class="form-group">
+  <label for="questionThree">
+    Question 3 :  {{questions[2].description}}
+  </label>
+    <input type="number"  id="questionThree"  class="form-control" formControlName="questionThree">
+  </div>
+
+  <div class="form-group">
+  <label for="questionFour">
+    Question 4 :  {{questions[3].description}}
+  </label>
+    <input type="number" id="questionFour"   class="form-control" formControlName="questionFour">
+  </div>
+
+  <div class="form-group">
+  <label for="questionFive">
+    Question 5 :  {{questions[4].description}}
+  </label>
+    <input type="number"  id="questionFive"  class="form-control" formControlName="questionFive">
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!questionForm.valid">Submit</button>
+
+</form>
+
+<div *ngIf="finished">
+
+  <p>Thank You</p>
+
+</div>

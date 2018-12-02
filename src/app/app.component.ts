@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Question} from './question';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'math-quize';
+  userName: string;
+  userTime: number;
+  questions: Array<Question>;
+
+  onUserName(userName: string) {
+    this.userName = userName;
+  }
 }

@@ -1,0 +1,9 @@
+<div class="form-group">
+<label for="name">
+  Hello thank you for being part of the experiment. Please enter your codeName:
+</label>
+<input type="text" [formControl]="name" id="name" class="form-control" >
+</div>
+<p>
+  <button (click)="updateName()" class="btn btn-primary">Update Name</button>
+</p>
