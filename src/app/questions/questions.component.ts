@@ -16,6 +16,8 @@ export class QuestionsComponent implements OnInit {
   hours  = 0 ;
   time: string;
   mins = 0;
+  score = 0;
+  date: Date;
   t: any;
   finished = false;
 
@@ -38,8 +40,8 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit() {
     this.questions.push(this.questionOne, this.questionOne, this.questionTwo, this.questionThree, this.questionFour, this.questionFive);
-
     this.timer();
+    this.date = new Date();
 
   }
 
@@ -50,6 +52,30 @@ export class QuestionsComponent implements OnInit {
     console.warn(this.questionForm.value);
     this.stop();
     this.finished = true;
+    this.checkScore();
+  }
+
+  checkScore() {
+
+    if (this.questionForm.value['questionOne'] === this.questionOne.answer) {
+      this.score = this.score + 1;
+    }
+
+    if (this.questionForm.value['questionTwo'] === this.questionTwo.answer) {
+      this.score = this.score + 1;
+    }
+
+    if (this.questionForm.value['questionThree'] === this.questionThree.answer) {
+      this.score = this.score + 1;
+    }
+
+    if (this.questionForm.value['questionFour'] === this.questionFour.answer) {
+      this.score = this.score + 1;
+    }
+
+    if (this.questionForm.value['questionFive'] === this.questionFive.answer) {
+      this.score = this.score + 1;
+    }
 
   }
 

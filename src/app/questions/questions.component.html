@@ -1,10 +1,12 @@
 <div class="row">
 
-<p>{{userName}} your time is {{time}}</p>
+
 
 </div>
 
 <form *ngIf="!finished" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+
+  <p>{{userName}} your time is {{time}}</p>
 
   <div class="form-group">
   <label for="questionOne">
@@ -47,6 +49,10 @@
 
 <div *ngIf="finished">
 
-  <p>Thank You</p>
+  <p>Thank You  {{userName}} . Your score is {{score}}</p>
+
+  <p>You finished in {{time}} and took the test at {{date}} </p>
+
+  <p>scores have been sent. if you don't get a confirmation email in the next 5 minutes. Please send your scores and time</p>
 
 </div>
